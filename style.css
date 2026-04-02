@@ -1,0 +1,318 @@
+:root {
+    --bg-color: #fcf7f5;
+    --primary-accent: #f5c2b3;
+    --text-main: #3d3d3d;
+    --text-white: #ffffff;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+body {
+    font-family: 'Inter', sans-serif, Arial;
+    margin: 0;
+    background: var(--bg-color);
+    color: var(--text-main);
+    text-align: center;
+}
+
+header {
+    padding: 20px 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 150px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
+    transition: 0.3s;
+    color: white;
+    text-decoration: none;
+}
+
+.mail-btn {
+    background: #ea4335;
+}
+
+.ig-btn {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.social-btn:hover {
+    transform: scale(1.1);
+}
+
+.banner {
+    background: var(--primary-accent);
+    color: var(--text-main);
+    padding: 15px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 800px;
+    margin: 10px auto;
+    font-weight: 500;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.banner:hover {
+    transform: scale(1.02);
+}
+
+.search-container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.search-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    color: #888;
+}
+
+.clear-icon {
+    position: absolute;
+    right: 15px;
+    color: #bbb;
+    cursor: pointer;
+    display: none;
+    transition: 0.3s;
+}
+
+.clear-icon:hover {
+    color: #333;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 15px 45px;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    font-size: 16px;
+    transition: 0.3s;
+    outline: none;
+}
+
+.search-container input:focus {
+    border-color: var(--primary-accent);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.12);
+}
+
+.no-results {
+    padding: 60px 20px;
+    text-align: center;
+    color: #999;
+}
+
+.reset-btn {
+    background: var(--text-main);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.reset-btn:hover {
+    background: #555;
+    transform: scale(1.05);
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.3s;
+}
+
+.card.hidden {
+    opacity: 0;
+    transform: scale(0.9);
+    pointer-events: none;
+    display: none;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.card-title {
+    font-weight: 600;
+    padding: 15px;
+    background: white;
+    color: var(--text-main);
+}
+
+.tag {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 10;
+    background: var(--primary-accent);
+    color: var(--text-main);
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin: 15px;
+    font-size: 13px;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-wrapper {
+    position: relative;
+    background: #fafafa;
+    height: 220px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #f0e6e2;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--bg-color);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    animation: scaleUp 0.4s ease forwards;
+}
+
+.modal-header h2 {
+    margin-top: 10px;
+    color: var(--text-main);
+    font-size: 1.5rem;
+}
+
+.modal-header p {
+    color: #666;
+    margin: 15px 0;
+}
+
+.modal-icon {
+    font-size: 3.5rem;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.modal-btn {
+    display: block;
+    background: var(--text-main);
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-weight: 600;
+    margin: 20px 0 10px;
+    transition: 0.3s;
+}
+
+.modal-btn:hover {
+    background: #555;
+    transform: translateY(-2px);
+}
+
+.modal-secondary-btn {
+    background: transparent;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: underline;
+    margin-top: 10px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+}
+
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

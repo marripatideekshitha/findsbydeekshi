@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find By Deekshi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo" onclick="document.getElementById('searchInput').value = ''; searchProducts();"
+            style="background-image: url('logodeekshi.jpeg');"></div>
+        <div class="social-buttons">
+            <a href="mailto:deekhitha.marripati@gmail.com" class="social-btn mail-btn" target="_blank">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="https://www.instagram.com/findsbydeekshi" class="social-btn ig-btn" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+    </header>
+
+
+
+    <div class="banner">
+        <i class="fa-brands fa-instagram"
+            style="font-size: 1.2rem; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-right: 8px; vertical-align: middle;"></i>
+        Follow <a href="https://www.instagram.com/findsbydeekshi" target="_blank"
+            style="color: inherit; font-weight: bold; text-decoration: underline;">@findsbydeekshi</a> on Instagram
+        for more!
+    </div>
+
+    <h1 style="margin-top: 30px; font-size: 2.2rem; color: var(--text-main);">Daily Useful Products</h1>
+
+    <div class="search-container">
+        <div class="search-input-wrapper">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="searchInput" placeholder="Search for items, categories..." oninput="searchProducts()"
+                autocomplete="off">
+            <i class="fa-solid fa-circle-xmark clear-icon" id="clearSearch" onclick="clearSearch()"></i>
+        </div>
+    </div>
+
+    <div id="noResults" class="no-results" style="display: none;">
+        <i class="fa-solid fa-face-frown" style="font-size: 3rem; color: #ddd; margin-bottom: 1rem;"></i>
+        <p>No products found matching your search.</p>
+        <button onclick="clearSearch()" class="reset-btn">View All Products</button>
+    </div>
+
+
+
+    <div class="products" id="productList">
+
+        <div class="card" onclick="window.open('https://amzn.in/d/09REW3gT', '_blank')" style="cursor: pointer;">
+            <div class="card-wrapper">
+                <div class="tag">#01</div>
+                <img src="src/01.png">
+            </div>
+            <div class="card-title">Hand Press Juicer</div>
+        </div>
+
+    </div>
+
+    <div id="instaModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fa-brands fa-instagram modal-icon"></i>
+                <h2>Join the Community!</h2>
+                <p>Don't miss out on daily product finds and exclusive skincare tips!</p>
+                <p style="font-weight: 600; color: var(--text-main);">Follow @findsbydeekshi</p>
+            </div>
+            <a href="https://www.instagram.com/findsbydeekshi" class="modal-btn" target="_blank"
+                onclick="closeInstaModal()">Follow Now</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
